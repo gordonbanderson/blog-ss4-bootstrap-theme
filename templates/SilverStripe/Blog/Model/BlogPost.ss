@@ -15,7 +15,6 @@
 
       <% include BootStrapCDN_JS %>
     <% include AllJavaScriptFiles %>
-    <% require javascript("weboftalent-twitter-tools/javascript/render-twitter-embeds.js") %>
-
+    <% require javascript("weboftalent/twitter-tools:javascript/render-twitter-embeds.js") %>
   </body>
 </html>

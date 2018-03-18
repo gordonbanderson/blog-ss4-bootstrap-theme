@@ -14,7 +14,6 @@
   <body class="$ClassName<% if not $Menu(2) %> no-sidebar<% end_if %>" <% if $i18nScriptDirection %>dir="$i18nScriptDirection"<% end_if %>>
     $Layout
       <% include AllJavaScriptFiles %>
-      <% require javascript("weboftalent-twitter-tools/javascript/render-twitter-embeds.js") %>
-
+      <% require javascript("weboftalent/twitter-tools:javascript/render-twitter-embeds.js") %>
   </body>
 </html>

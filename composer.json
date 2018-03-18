@@ -1,0 +1,16 @@
+{
+    "name": "suilven/blog-ss4-bootstrap-theme",
+    "description": "Base bootstrap templates for SilverStripe blog",
+    "type": "silverstripe-theme",
+    "keywords": ["silverstripe", "theme", "suilven", "boostrap", "blog"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Gordon Anderson"
+        }
+    ],
+    "require": {
+        "composer/installers": "*",
+        "silverstripe/framework": ">=4.0"
+    }
+}

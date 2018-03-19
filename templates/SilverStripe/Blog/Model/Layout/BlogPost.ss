@@ -11,6 +11,8 @@
             <!-- Title -->
             <h1 class="mt-4">$Title</h1>
 
+
+
             <!-- Author -->
             <p class="lead">
                 <% if $Credits %>
@@ -32,8 +34,7 @@
 
             <!-- Date/Time -->
             <p><%t SilverStripe\\Blog\\Model\\Blog.Posted "Posted" %>
-                <a href="$MonthlyArchiveLink">$PublishDate.ago</a></p>
-
+                <time class="timeago" datetime="$PublishDate.Format(y-MM-dd'T'HH:mm:ss'Z')">$PublishDate.Nice</time>
             <hr>
 
             <!-- Preview Image -->

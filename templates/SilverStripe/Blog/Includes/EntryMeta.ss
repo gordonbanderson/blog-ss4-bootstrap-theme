@@ -21,7 +21,7 @@
     <% end_if %>
 
     <%t SilverStripe\\Blog\\Model\\Blog.Posted "Posted" %>
-    <a href="$MonthlyArchiveLink">$PublishDate.ago</a>
+    <a href="$MonthlyArchiveLink"><time class="timeago" datetime="$PublishDate.Format(y-MM-dd'T'HH:mm:ss'Z')">$PublishDate.Nice</time></a>
 
     <% if $Credits %>
         <%t SilverStripe\\Blog\\Model\\Blog.By "by" %>

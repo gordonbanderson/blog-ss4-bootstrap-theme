@@ -3,67 +3,63 @@
 <!-- Page Content -->
 <div class="container">
 
-        <div class="row">
-            <article>
+    <div class="row">
+        <div class="col col-sm-8">
+            <div class="row">
+                <article>
+                    <!-- Post Content Column -->
+                    <div class="col col-lg-12">
+                        <div class="post-image">
+                            <div class="post-heading">
+                                <h3><a href="#">$Title</a></h3>
 
-            <!-- Post Content Column -->
-            <div class="col col-lg-8">
+                            </div>
+                            <% if $FeaturedImage %>
+                                <img class="img-fluid rounded" src="$FeaturedImage.FocusFillMax(750,500).URL"
+                                     alt="Image for blog post $Title">
+                            <% end_if %>
+                        </div>
+                        $Content
 
-                <!-- Title -->
+                        <p class="date"><%t SilverStripe\\Blog\\Model\\Blog.Posted "Posted" %>
+                            <time class="timeago"
+                                  datetime="$PublishDate.Format(y-MM-dd'T'HH:mm:ss'Z')">$PublishDate.Nice</time>
+                        </p>
 
-                <div class="post-image">
-                    <div class="post-heading">
-                        <h3><a href="#">$Title</a></h3>
-
-                    </div>
-                    <% if $FeaturedImage %>
-                        <img class="img-fluid rounded" src="$FeaturedImage.FocusFillMax(750,500).URL"
-                             alt="Image for blog post $Title">
-                    <% end_if %>
-                </div>
-                $Content
-
-                <p class="date"><%t SilverStripe\\Blog\\Model\\Blog.Posted "Posted" %>
-                    <time class="timeago" datetime="$PublishDate.Format(y-MM-dd'T'HH:mm:ss'Z')">$PublishDate.Nice</time>
-                </p>
-
-                <div class="bottom-article">
-                    <div class="row">
-                        <div class="col col-xs-12">
-                            <ul class="meta-post">
-                                <li><i class="fa fa-user"></i>
-                                    <% loop $Credits %>
-                                        <% if not $First && not $Last %>, <% end_if %>
-                                        <% if not $First && $Last %> <%t SilverStripe\\Blog\\Model\\Blog.AND "and" %> <% end_if %>
-                                        <% if $URLSegment && not $Up.ProfilesDisabled %>
-                                            <a href="$URL">$Name.XML</a>
-                                        <% else %>
-                                            $Name.XML
-                                        <% end_if %>
-                                    <% end_loop %>
-                                </li>
-                                <li><i class="fa fa-folder-open"></i><a href="#"> Blog</a></li>
-                                <li><i class="fa fa-tag"></i><a href="#">Web design</a></li>
-                            </ul>
+                        <div class="bottom-article">
+                            <div class="row">
+                                <div class="col col-xs-12">
+                                    <ul class="meta-post">
+                                        <li><i class="fa fa-user"></i>
+                                            <% loop $Credits %>
+                                                <% if not $First && not $Last %>, <% end_if %>
+                                                <% if not $First && $Last %> <%t SilverStripe\\Blog\\Model\\Blog.AND "and" %> <% end_if %>
+                                                <% if $URLSegment && not $Up.ProfilesDisabled %>
+                                                    <a href="$URL">$Name.XML</a>
+                                                <% else %>
+                                                    $Name.XML
+                                                <% end_if %>
+                                            <% end_loop %>
+                                        </li>
+                                        <li><i class="fa fa-folder-open"></i><a href="#"> Blog</a></li>
+                                        <li><i class="fa fa-tag"></i><a href="#">Web design</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
-            </article>
-
-        </div>
 
 
-    <div class="row">
-
-        <!-- Post Content Column -->
-        <div class="col col-lg-8">
+            <!-- Post Content Column -->
             <!-- author info -->
             <% loop $Authors %>
                 <div class="row about-author">
-                    <div class="col col-1 col-sm-7">
+                    <div class="col col-2 col-sm-1 thumbnail-container">
                         <a href="#" class="thumbnail">
-                            <img src="$BlogProfileImage.FocusFillMax(60,60).URL" alt="Blog profile image for $Title"/>
+                            <img src="$BlogProfileImage.FocusFillMax(60,60).URL"
+                                 alt="Blog profile image for $Title"/>
                         </a>
                     </div>
 
@@ -77,10 +73,8 @@
             $Form
             $CommentsForm
         </div>
+        <% include SilverStripe\\Blog\\BlogSideBar %>
     </div>
-
-    <!-- Sidebar Widgets Column -->
-    <% include SilverStripe\\Blog\\BlogSideBar %>
 
 
 </div>

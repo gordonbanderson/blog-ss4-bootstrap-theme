@@ -70,7 +70,6 @@
                 </div>
             <% end_loop %>
 
-            $Form
             $CommentsForm
         </div>
         <% include SilverStripe\\Blog\\BlogSideBar %>

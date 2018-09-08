@@ -11,10 +11,6 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-            <h1 class="my-4">Page Heading
-                <small>Secondary Text</small>
-            </h1>
-
             <% if $PaginatedList.Exists %>
                 <% loop $PaginatedList %>
                     <% include SilverStripe\\Blog\\PostSummary %>

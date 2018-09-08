@@ -12,14 +12,9 @@
                 Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
                 ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed.
             </p>
+
             <div class="bottom-article">
-                <ul class="meta-post">
-                    <li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
-                    <li><i class="icon-user"></i><a href="#"> Admin</a></li>
-                    <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-                    <li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
-                </ul>
-                <a href="#" class="float-sm-right">Continue reading <i class="icon-angle-right"></i></a>
+                <% include SilverStripe\\Blog\\EntryMeta For='blog' %>
             </div>
         </div>
     </div>
@@ -47,7 +42,7 @@
         </a>
     </div>
     <div class="card-footer text-muted">
-        <% include SilverStripe\\Blog\\EntryMeta %>
+        <% include SilverStripe\\Blog\\EntryMeta For='blog' %>
     </div>
 </div>
 

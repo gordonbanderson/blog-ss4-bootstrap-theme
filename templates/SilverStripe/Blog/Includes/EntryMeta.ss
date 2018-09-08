@@ -1,39 +1,27 @@
-<p class="blog-post-meta">
-    <% if $Categories.exists %>
-        <%t SilverStripe\\Blog\\Model\\Blog.PostedIn "Posted in" %>
-        <% loop $Categories %>
-            <a href="$Link" title="$Title">$Title</a><% if not Last %>, <% else %>;<% end_if %>
-        <% end_loop %>
-    <% end_if %>
+<div class="row">
+    <div class="col col-xs-12">
+        <ul class="meta-post">
+            <li><i class="fa fa-calendar"></i>
+                <time class="timeago"
+                      datetime="$PublishDate.Format(y-MM-dd'T'HH:mm:ss'Z')">$PublishDate.Nice</time>
+            </li>
+            <li><i class="fa fa-user"></i>
+                <% loop $Credits %>
+                    <% if not $First && not $Last %>, <% end_if %>
+                    <% if not $First && $Last %> <%t SilverStripe\\Blog\\Model\\Blog.AND "and" %> <% end_if %>
+                    <% if $URLSegment && not $Up.ProfilesDisabled %>
+                        <a href="$URL">$Name.XML</a>
+                    <% else %>
+                        $Name.XML
+                    <% end_if %>
+                <% end_loop %>
+            </li>
+            <li><i class="fa fa-folder-open"></i><a href="#"> Blog</a></li>
+            <li><i class="fa fa-tag"></i><a href="#">Web design</a></li>
+            <li><i class="fa fa-comment"></i>$Comments.Count <% if $Comments.Count == 1 %>comment<% else %>comments<% end_if %></li>
 
-    <% if $Tags.exists %>
-        <%t SilverStripe\\Blog\\Model\\Blog.Tagged "Tagged" %>
-        <% loop $Tags %>
-            <a href="$Link" title="$Title">$Title</a><% if not Last %>, <% else %>;<% end_if %>
-        <% end_loop %>
-    <% end_if %>
+            <li>For=$For</li>
 
-    <% if $Comments.exists %>
-        <a href="{$Link}#comments-holder">
-            <%t SilverStripe\\Blog\\Model\\Blog.Comments "Comments" %>
-            $Comments.count
-        </a>;
-    <% end_if %>
-
-    <%t SilverStripe\\Blog\\Model\\Blog.Posted "Posted" %>
-    <a href="$MonthlyArchiveLink"><time class="timeago" datetime="$PublishDate.Format(y-MM-dd'T'HH:mm:ss'Z')">$PublishDate.Nice</time></a>
-
-    <% if $Credits %>
-        <%t SilverStripe\\Blog\\Model\\Blog.By "by" %>
-
-        <% loop $Credits %>
-            <% if not $First && not $Last %>, <% end_if %>
-            <% if not $First && $Last %> <%t SilverStripe\\Blog\\Model\\Blog.AND "and" %> <% end_if %>
-            <% if $URLSegment && not $Up.ProfilesDisabled %>
-                <a href="$URL">$Name.XML</a>
-            <% else %>
-                $Name.XML
-            <% end_if %>
-        <% end_loop %>
-    <% end_if %>
-</p>
+        </ul>
+    </div>
+</div>

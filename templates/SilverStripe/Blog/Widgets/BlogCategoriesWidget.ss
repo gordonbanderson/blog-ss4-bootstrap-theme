@@ -1,14 +1,7 @@
-<% loop $SplitDataListIntoGridRows('getCategories',2) %>
-    <div class="col-lg-6">
-        <ul class="fa-ul">
+<ul class="cat">
+<% loop $SplitDataListIntoGridRows('getCategories',1) %>
         <% loop $Columns %>
-            <li><i class="fa-li fa fa-list-alt"></i>
-                <a href="$Link" title="$Title">
-                    <span class="arrow">&rarr;</span>
-                    <span class="text">$Title</span>
-                </a>
-            </li>
+            <li><i class="fa fa-angle-right"></i>&nbsp;<a href="$Link">$Title</a><span> (20)</span></li>
         <% end_loop %>
-        </ul>
-    </div>
 <% end_loop %>
+</ul>

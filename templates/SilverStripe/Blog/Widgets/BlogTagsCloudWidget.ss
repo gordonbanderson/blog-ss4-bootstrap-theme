@@ -1,12 +1,9 @@
 <% if $Tags %>
-	<ul class="blogTagCloud fa-ul">
-		<% loop $Tags %>
-			<li>
-				<a href="$Link" title="$TagName">
-					<span class="text tagCount{$NormalizedTag}">$TagName</span>
-				</a>
-			</li>
-		<% end_loop %>
-	</ul>
-	<div style="clear: both;"></div>
+    <ul class="tags blogTagCloud">
+        <% loop $Tags %>
+            <li>
+                <a href="$Link" title="$Title"><span class="text tagCount{$NormalizedTag}">$TagName</span></a>
+            </li>
+        <% end_loop %>
+    </ul>
 <% end_if %>

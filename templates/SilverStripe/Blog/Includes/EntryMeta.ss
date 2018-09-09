@@ -5,22 +5,32 @@
                 <time class="timeago"
                       datetime="$PublishDate.Format(y-MM-dd'T'HH:mm:ss'Z')">$PublishDate.Nice</time>
             </li>
-            <li><i class="fa fa-user"></i>
+
                 <% loop $Credits %>
-                    <% if not $First && not $Last %>, <% end_if %>
-                    <% if not $First && $Last %> <%t SilverStripe\\Blog\\Model\\Blog.AND "and" %> <% end_if %>
+                    <li>
+                    <i class="fa fa-user"></i>
                     <% if $URLSegment && not $Up.ProfilesDisabled %>
                         <a href="$URL">$Name.XML</a>
                     <% else %>
                         $Name.XML
                     <% end_if %>
+                    </li>
                 <% end_loop %>
-            </li>
-            <li><i class="fa fa-folder-open"></i><a href="#"> Blog</a></li>
-            <li><i class="fa fa-tag"></i><a href="#">Web design</a></li>
-            <li><i class="fa fa-comment"></i>$Comments.Count <% if $Comments.Count == 1 %>comment<% else %>comments<% end_if %></li>
 
-            <li>For=$For</li>
+            <% loop $Tags %>
+                <li><i class="fa fa-tag"></i><a href="$Link">$Title</a></li>
+            <% end_loop %>
+
+            <% loop $Categories %>
+                    <li><i class="fa fa-folder-open"></i>&nbsp;<a href="$Link">$Title</a><span><!-- add count here --></span></li>
+            <% end_loop %>
+
+            <% if $For == 'bloglisting' %>
+                <li><i class="fa fa-comment"></i>
+                    <a href="{$Link}#comments-holder">$Comments.Count <% if $Comments.Count == 1 %>comment<% else %>comments<% end_if %></a></li>
+            <% else %>
+                <li><a href="#comments-holder">$Comments.Count <% if $Comments.Count == 1 %>comment<% else %>comments<% end_if %></a></li>
+            <% end_if %>
 
         </ul>
     </div>

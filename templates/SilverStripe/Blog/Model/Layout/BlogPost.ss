@@ -13,6 +13,7 @@
                                 <img class="img-fluid rounded" src="$FeaturedImage.FocusFillMax(750,500).URL"
                                      alt="Image for blog post $Title">
                             <% end_if %>
+                        <% if $FeaturedImageCaption %><p class="caption mt-1">$FeaturedImageCaption</p><% end_if %>
                         </div>
                         $Content
 

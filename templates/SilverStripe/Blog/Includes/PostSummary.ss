@@ -5,8 +5,10 @@
                 <div class="post-heading">
                     <h3><a href="$Link">$Title</a></h3>
                 </div>
-                <img class="img-fluid rounded" src="$FeaturedImage.FocusFillMax(750,500).URL"
-                     alt="Image for blog post $Title">
+
+                <% if $FeaturedImage %>
+                    <% include LazySize/FullWidthImage8 Image=$FeaturedImage,Caption=$FeaturedImageCaption,ExtraClasses='rounded' %>
+                <% end_if %>
             </div>
             <p>
                 Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius

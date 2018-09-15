@@ -1,5 +1,6 @@
+<% include TopBar %>
 <% include Header %>
-
+<% include InnerHeadline %>
 <!-- Page Content -->
 <div class="container">
 
@@ -10,8 +11,7 @@
                     <div class="col col-lg-12">
                         <div class="post-image">
                             <% if $FeaturedImage %>
-                                <img class="img-fluid rounded" src="$FeaturedImage.FocusFillMax(750,500).URL"
-                                     alt="Image for blog post $Title">
+                                <% include LazySize/FullWidthImage8 Image=$FeaturedImage,Caption=$FeaturedImageCaption,ExtraClasses='rounded' %>
                             <% end_if %>
                         <% if $FeaturedImageCaption %><p class="caption mt-1">$FeaturedImageCaption</p><% end_if %>
                         </div>
@@ -23,7 +23,6 @@
                     </div>
                 </article>
             </div>
-
 
             <!-- Post Content Column -->
             <!-- author info -->

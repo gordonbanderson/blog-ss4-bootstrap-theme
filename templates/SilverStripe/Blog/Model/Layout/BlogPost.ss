@@ -1,6 +1,4 @@
-<% include TopBar %>
-<% include Header %>
-<% include InnerHeadline %>
+
 <!-- Page Content -->
 <div class="container">
 

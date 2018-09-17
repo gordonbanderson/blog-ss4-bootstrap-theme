@@ -1,4 +1,3 @@
-
 <!-- Page Content -->
 <div class="container">
 
@@ -11,7 +10,7 @@
                             <% if $FeaturedImage %>
                                 <% include LazySize/FullWidthImage8 Image=$FeaturedImage,Caption=$FeaturedImageCaption,ExtraClasses='rounded' %>
                             <% end_if %>
-                        <% if $FeaturedImageCaption %><p class="caption mt-1">$FeaturedImageCaption</p><% end_if %>
+                            <% if $FeaturedImageCaption %><p class="caption mt-1">$FeaturedImageCaption</p><% end_if %>
                         </div>
                         $Content
 
@@ -47,11 +46,6 @@
 
 
 </div>
-<!-- /.row -->
 
-</div>
-<!-- /.container -->
-
-<% include Footer %>
 
 

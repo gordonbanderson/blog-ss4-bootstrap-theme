@@ -1,6 +1,4 @@
 <article>
-    <div class="row">
-        <div class="span8">
             <div class="post-image">
                 <div class="post-heading">
                     <h3><a href="$Link">$Title</a></h3>
@@ -18,6 +16,4 @@
             <div class="bottom-article">
                 <% include SilverStripe\\Blog\\EntryMeta For='bloglisting' %>
             </div>
-        </div>
-    </div>
 </article>

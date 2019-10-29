@@ -16,9 +16,8 @@
             <% end_if %>
 
             <!-- Pagination -->
-            <% with $PaginatedList %>
-                <% include SilverStripe\\Blog\\Pagination %>
-            <% end_with %>
+            <% with $PaginatedList %><% include PageFurniture/Pagination %><% end_with %>
+
 
         </div>
 

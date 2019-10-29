@@ -2,9 +2,13 @@
     <div class="col col-xs-12">
         <ul class="meta-post">
             <li><i class="fa fa-calendar"></i>
-                <time class="timeago"
-                      datetime="$PublishDate.Format(y-MM-dd'T'HH:mm:ss'Z')">$PublishDate.Nice</time>
+                $PublishDate.Format('dd/MM/y')
             </li>
+
+                <li><i class="fa fa-history"></i>
+                 <time class="timeago"
+                      datetime="$PublishDate.Format(y-MM-dd'T'HH:mm:ss'Z')"></time>
+                </li>
 
                 <% loop $Credits %>
                     <li>

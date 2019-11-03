@@ -7,6 +7,11 @@
                 <article>
                     <div class="col col-lg-12">
                         <div class="post-image">
+
+<% if $FeaturedFlickrImageID %>
+<% include LazySize/FullWidthFlickrImage8 FlickrID=$FeaturedFlickrImageID,Caption=$FeaturedImageCaption,ExtraClasses='rounded' %>
+<% end_if %>
+
                             <% if $FeaturedImage %>
                                 <% include LazySize/FullWidthImage8 Image=$FeaturedImage,Caption=$FeaturedImageCaption,ExtraClasses='rounded' %>
                             <% end_if %>

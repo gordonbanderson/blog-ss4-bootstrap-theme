@@ -36,6 +36,10 @@
                 <li><a href="#comments-holder">$Comments.Count <% if $Comments.Count == 1 %>comment<% else %>comments<% end_if %></a></li>
             <% end_if %>
 
+            <% if $ClassName='Suilven\\CricketSite\\Model\\MatchReport' %>
+                 <li><i class="fa fa-map-marker"></i>$Match.Ground.Name</li>
+            <% end_if %>
+
         </ul>
     </div>
 </div>
